@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="whole" id="whole">
+        <h1>Alarm</h1>
+        <div class="container">
+            <div class="input_container">
+                <form id="form">
+                <label>Remainder</label>
+                <input id="name" type="text">
+                <label>Time</label>
+                <select name="Hours" id="hours" required>
+                    <option value="12 AM">12 AM</option>
+                    <script>
+                          for (let i = 1; i <= 11; i++) {
+                                document.write('<option value="' + i + ' AM">' + i + ' AM</option>');
+                            }
+                            document.write('<option value="12 PM">12 PM</option>');
+                            for (let i = 1; i <= 11; i++) {
+                                document.write('<option value="' + i + ' PM">' + i + ' PM</option>');
+                            }
+                    </script>   
+                </select>
+                <select name="Minutes" id="minutes">
+                    <option value="">00</option>
+                    <script>
+                        for(let i = 1; i <= 60; i++){
+                            document.write('<option value = "'+ i +'">' + i + '</option>')
+                        }
+                    </script>
+                </select>
+                <select name="Seconds" id="seconds">
+                    <option value="">00</option>
+                    <script>
+                        for(let i = 1; i <= 60; i++){
+                            document.write('<option value = "'+ i +'">' + i + '</option>')
+                        }
+                    </script>
+                </select>
+
+                <label>Date</label>
+                <input type="date" id="date" required><br>
+
+                <div class="button">
+                    <button id="button">Set Now</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="timer">
+        <p id="given_name"></p>
+        <div id="timer_container">
+            <div>
+                <p class="value" id="hrs">00</p>
+                <p class="name">Hours</p>
+            </div>
+            <div>
+                <p class="value" id="mins">00</p>
+                <p class="name">Minutes</p>
+            </div>
+            <div>
+                <p class="value" id="secs">00</p>
+                <p class="name">Seconds</p>
+            </div>
+        </div>
+        <div  id="alarm_buttons">
+            <button id="restart">RESET</button>
+            <button id="cancel">CANCEL</button>
+        </div>
+    </div>
+    <audio id="alert-sound" src="alarm sound 2.mp3" preload="auto"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
